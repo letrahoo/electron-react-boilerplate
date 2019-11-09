@@ -4,7 +4,7 @@
   "description": "Some demos of building electron apps.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "cross-env NODE_ENV=development electron -r @babel/register ./app/main.dev.js"
   },
   "repository": "git@github.com:Letra312/learnElectron.git",
   "author": "letra <hxq15827562797@gmail.com> (github.com/Letra312)",
@@ -14,6 +14,20 @@
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1"
+    "@babel/preset-env": "^7.7.1",
+    "@babel/register": "^7.7.0",
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
+    "prettier": "^1.19.1",
+    "stylelint": "^11.1.1",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-standard": "^19.0.0"
   }
 }

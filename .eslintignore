@@ -2,6 +2,11 @@
 logs
 *.log
 
+# Runtime data
+pids
+*.pid
+*.seed
+
 # Coverage directory used by tools like istanbul
 coverage
 
@@ -11,3 +16,7 @@ node_modules
 
 # OSX
 .DS_Store
+
+# Package.json
+package.json
+.travis.yml
