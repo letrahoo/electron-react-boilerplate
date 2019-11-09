@@ -10,7 +10,10 @@
   "author": "letra <hxq15827562797@gmail.com> (github.com/Letra312)",
   "license": "MIT",
   "dependencies": {
-    "electron": "^7.1.1"
+    "electron": "^7.1.1",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-hot-loader": "^4.12.16"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
