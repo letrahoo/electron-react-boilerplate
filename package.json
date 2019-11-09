@@ -1,0 +1,15 @@
+{
+  "name": "electron-demos",
+  "version": "0.1.0",
+  "description": "Some demos of building electron apps.",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "git@github.com:Letra312/learnElectron.git",
+  "author": "letra <hxq15827562797@gmail.com> (github.com/Letra312)",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^7.1.1"
+  }
+}
