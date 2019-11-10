@@ -11,3 +11,9 @@ node_modules
 
 # OSX
 .DS_Store
+
+# cache directory
+.cache
+
+# build directory
+dist
