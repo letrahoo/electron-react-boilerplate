@@ -2,20 +2,20 @@ import { app, BrowserWindow } from 'electron';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow = null;
+let mainWindow: any = null;
 
 function createWindow() {
   // Create the browser window
   mainWindow = new BrowserWindow({
-    width: 800,
     height: 600,
     webPreferences: {
       nodeIntegration: true,
     },
+    width: 800,
   });
 
   // and load the index.html of the app
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.loadFile('dist/static/index.html');
 
   // Open the DevTools
   mainWindow.webContents.openDevTools();
