@@ -9,7 +9,10 @@
       true,
       "single",
       "avoid-escape"
-    ]
+    ],
+    "jsx-no-lambda": false,
+    "object-literal-sort-keys": false,
+    "no-console": false
   },
   "rulesDirectory": []
 }

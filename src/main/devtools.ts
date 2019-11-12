@@ -1,4 +1,4 @@
-import { isDevMode } from '../utils/is-dev-mode';
+import { isDevMode } from '../utils/devmode';
 
 export async function setupDevtools(): Promise<void> {
   if (!isDevMode()) return;
