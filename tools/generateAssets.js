@@ -1,5 +1,5 @@
-const { compileParcel } = require('./parcel-build');
+const { watchParcel } = require('./parcel-watch');
 
 module.exports = async () => {
-  await Promise.all([compileParcel()]);
+  await Promise.all([watchParcel()]);
 };

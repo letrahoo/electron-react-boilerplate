@@ -1,29 +1,62 @@
+import dva, { connect } from 'dva';
 import React from 'react';
-import { render } from 'react-dom';
-import { createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+// import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { DECREMENT_ACTION, INCREMENT_ACTION } from './actions';
-import Counter from './Components/Counter';
-import rootReducer from './reducers';
+// 1. Initialize
+const app = dva();
 
-const store = createStore(rootReducer, composeWithDevTools());
+// 2. Model
+app.model({
+  namespace: 'count',
+  state: 0,
+  reducers: {
+    add(count) {
+      return count + 1;
+    },
+    minus(count) {
+      return count - 1;
+    },
+  },
+});
 
 import './app.scss';
+
+interface IAppProps {
+  count: number;
+}
 export class App {
   public async setup(): Promise<void | Element | React.Component> {
-    const rendered = () =>
-      render(
-        <Counter
-          value={store.getState()}
-          onIncrement={() => store.dispatch(INCREMENT_ACTION)}
-          onDecrement={() => store.dispatch(DECREMENT_ACTION)}
-        />,
-        document.getElementById('app'),
+    // 3. View
+    const Root = connect(({ count }: IAppProps) => ({
+      count,
+    }))((props: any) => {
+      return (
+        <div>
+          <h2>{props.count}</h2>
+          <button
+            key='add'
+            onClick={() => {
+              props.dispatch({ type: 'count/add' });
+            }}
+          >
+            +
+          </button>
+          <button
+            key='minus'
+            onClick={() => {
+              props.dispatch({ type: 'count/minus' });
+            }}
+          >
+            -
+          </button>
+        </div>
       );
-    const result = rendered();
-    store.subscribe(rendered);
-    return result;
+    });
+
+    // 4. Router
+    app.router(() => <Root />);
+    // 5. Start
+    app.start('#app');
   }
 }
 
