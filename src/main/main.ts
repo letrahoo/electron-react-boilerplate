@@ -1,10 +1,12 @@
 import { app, BrowserWindow } from 'electron';
 
+import { setupDevtools } from './devtools';
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow: any = null;
 
-function createWindow() {
+async function createWindow(): Promise<void> {
   // Create the browser window
   mainWindow = new BrowserWindow({
     height: 600,
@@ -27,6 +29,7 @@ function createWindow() {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
+  await setupDevtools();
 }
 
 // This method will be called when Electron has finished

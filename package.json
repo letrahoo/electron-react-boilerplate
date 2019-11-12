@@ -13,8 +13,10 @@
     "forge": "./forge.config.js"
   },
   "dependencies": {
+    "electron-devtools-installer": "^2.2.4",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "rimraf": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
