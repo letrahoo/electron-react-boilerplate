@@ -9,7 +9,7 @@ export function getMainWindowOptions(): Electron.BrowserWindowConstructorOptions
     height: 600,
     minHeight: 600,
     minWidth: 600,
-    titleBarStyle: process.platform === 'darwin' ? 'hidden' : undefined,
+    // titleBarStyle: process.platform === 'darwin' ? 'hidden' : undefined,
     acceptFirstMouse: true,
     webPreferences: {
       nodeIntegration: true,

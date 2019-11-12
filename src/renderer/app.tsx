@@ -1,5 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
+
+import '../scss/main.scss';
 export class App {
   public async setup(): Promise<void | Element | React.Component> {
     const app = (

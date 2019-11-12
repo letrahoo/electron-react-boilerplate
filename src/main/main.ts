@@ -22,7 +22,7 @@ export function onWindowAllClosed() {
   if (process.platform !== 'darwin') {
     app.quit();
   }
-};
+}
 
 export function main() {
   // Handle creating/removing shortcuts on Windows when
