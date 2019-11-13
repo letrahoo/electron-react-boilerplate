@@ -22,11 +22,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build, and test
-        run: |
-          npm config set electron https://npm.taobao.org/mirrors/electron/
-          npm install
-          npm run test:ci
-          npm run test:coverage
+      - name: Install Dependencies
+        run: npm install
+        env:
+          CI: true
+      - name: Test in CI
+        run: npm run test:ci
+        env:
+          CI: true
+      - name: Show coverage
+        if: matrix.os == 'ubuntu-latest'
+        run: npm run test:coverage
         env:
           CI: true
