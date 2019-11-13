@@ -11,6 +11,11 @@ cache:
   - node_modules
   - $HOME/.cache/electron
 
+branches:
+only:
+- master
+- /^v\d+\.\d+\.\d+/
+
 install:
 - npm install
 
