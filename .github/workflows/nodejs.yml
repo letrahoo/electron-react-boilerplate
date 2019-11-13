@@ -1,0 +1,31 @@
+name: Node CI
+
+on:
+  push:
+    branches: 
+      - master
+      - /^v\d+\.\d+\.\d+/
+
+jobs:
+  test_and_coverage:
+    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node-version: ['8', '10', '12']
+        os: [ubuntu-latest, macOS-latest]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run test:ci
+        npm run test:coverage
+      env:
+        CI: true
