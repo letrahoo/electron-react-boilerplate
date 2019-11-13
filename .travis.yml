@@ -1,0 +1,16 @@
+language: node_js
+node_js: "12"
+os:
+- linux
+- osx
+dist: trusty
+sudo: false
+
+cache:
+  directories:
+  - node_modules
+  - $HOME/.cache/electron
+
+install:
+- npm install
+- npm test:ci

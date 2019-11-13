@@ -4,7 +4,9 @@
   "description": "Some demos of building electron apps.",
   "main": "dist/src/main/main",
   "scripts": {
-    "start": "rimraf ./dist && electron-forge start"
+    "start": "rimraf ./dist && electron-forge start",
+    "test": "jest",
+    "test:ci": "jest --coverage --runInBand"
   },
   "repository": "git@github.com:Letra312/learnElectron.git",
   "author": "letra <hxq15827562797@gmail.com> (github.com/Letra312)",
@@ -16,16 +18,20 @@
     "dva": "^2.6.0-beta.17",
     "electron-devtools-installer": "^2.2.4",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "tslib": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@electron-forge/cli": "^6.0.0-beta.45",
     "@electron-forge/maker-zip": "^6.0.0-beta.45",
+    "@types/jest": "^24.0.23",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
     "@types/react-redux": "^7.1.5",
     "electron": "^7.1.1",
+    "jest": "^24.9.0",
+    "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",
     "redux-devtools-extension": "^2.13.8",
@@ -34,6 +40,7 @@
     "stylelint": "^11.1.1",
     "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-standard": "^19.0.0",
+    "ts-jest": "^24.1.0",
     "tslint": "^5.20.1",
     "tslint-react": "^4.1.0",
     "typescript": "^3.7.2"
