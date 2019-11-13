@@ -24,14 +24,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Dependencies
         run: npm install
-        env:
-          CI: true
       - name: Test in CI
         run: npm run test:ci
         env:
           CI: true
-      - name: Show coverage
+      - name: Coveralls
         if: matrix.os == 'ubuntu-latest'
-        run: npm run test:coverage
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.github_token }}
+          path-to-lcov: ./coverage/lcov.info
         env:
           CI: true
