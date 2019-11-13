@@ -16,5 +16,6 @@ install:
 
 script:
 - npm run test:ci
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then npm run test:coverage; fi
 
 after_success: if test -n "$TRAVIS_TAG"; then fi;
